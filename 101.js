@@ -146,7 +146,7 @@ console.assert(minimum(1000,-2,99,50) === -2)
 // both or neither.
 
 var justOneString = function(input1,input2){
-    if (((typeof(input1) === 'string') && (typeof(input2)!=='string'))||((typeof(input1) !== 'string') && (typeof(input2) === 'string'))){
+    if (((typeof (input1) === 'string') && (typeof (input2)!== 'string'))|| ((typeof (input1) !== 'string') && (typeof (input2) === 'string'))){
        return true
     }
     return false
@@ -196,7 +196,7 @@ console.assert(NUMBER === 48)
 // "YES." Otherwise, it will does nothing.
 
 var conditionallyInvoke = function(func){
-    if (ORACLE ==='YES'){
+    if (ORACLE === 'YES'){
         func();
     }
 }

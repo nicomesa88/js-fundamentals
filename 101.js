@@ -122,11 +122,11 @@ console.assert(sum(5,-5) === null)
 // boolean operators, or both (but not neither).
 
 var minimum = function (num1, num2, num3, num4) {
-    if ((num1<num2)&&(num1<num3)&&(num1<num4)){
+    if (( num1 < num2) && (num1 < num3) && (num1 < num4)){
         return num1
-    } if ((num1>num2)&&(num2<num3)&&(num2<num4)){
+    } if ((num1 > num2) && (num2 < num3) && (num2 < num4)){
         return num2
-    } if ((num2>num3)&&(num3<num4)){
+    } if ((num2 > num3) && (num3 < num4)) {
           return num3
     } else {
         return num4
@@ -146,7 +146,7 @@ console.assert(minimum(1000,-2,99,50) === -2)
 // both or neither.
 
 var justOneString = function(input1,input2){
-    if(((typeof(input1) === 'string')&&(typeof(input2)!=='string'))||((typeof(input1) !== 'string')&&(typeof(input2)==='string'))){
+    if (((typeof(input1) === 'string') && (typeof(input2)!=='string'))||((typeof(input1) !== 'string') && (typeof(input2) === 'string'))){
        return true
     }
     return false

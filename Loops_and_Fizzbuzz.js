@@ -5,7 +5,7 @@ Write a function that calculates the sum of all the numbers in an array */
 
 var sumOfArray = function (ary) {
     var total = 0
-    for (var i = 0; i < ary.length; i += 1) {
+    for (var i = 0; i < ary.length; i ++) {
         total += ary[i]
     }
     return total

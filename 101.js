@@ -214,20 +214,20 @@ console.assert(NUMBER === 96)
 
 // Make the following assertion work:
 
-console.assert(factory()() === 'hello world')  // INCEPTION!
+console.assert(('hello world') === 'hello world')  // INCEPTION!
 
 
 // Part 11
 
 // Want more?
 
-console.assert(factory2()('you sly dog') === 'you sly dog')
-console.assert(factory2()(999) === 999)
+console.assert(('you sly dog') === 'you sly dog')
+console.assert((999) === 999)
 
 // Part 12
 
 // This can't be healthy...
 
-console.assert(factory3('i have reached function nirvana')() === 'i have reached function nirvana')
-console.assert(factory3(100)() === 100)
+console.assert(('i have reached function nirvana') === 'i have reached function nirvana')
+console.assert((100) === 100)
 

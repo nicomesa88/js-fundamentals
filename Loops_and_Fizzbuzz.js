@@ -25,12 +25,16 @@ var maxOfArray = function(nums) {
         var max = nums[0]
     }
     else {
-        max = nums[1]
-    }
+        var max = nums[1]
+        }
     for (var i = 2; i < nums.length; i = i + 1) {
-        var testNum = nums[i]
-        if (testNum > max) {
-            max = testNum
+        if( typeof nums[i] === 'number'){
+            var testNum = nums[i]
+            if( testNum > max) {
+                max = testNum
+            }
+        } else {
+                max = NaN
         }
     }
     return max
@@ -38,7 +42,7 @@ var maxOfArray = function(nums) {
 
 console.assert(maxOfArray([2,4,3]) === 4)
 console.assert(maxOfArray([10,9,8,100,7,6]) === 100)
-// console.assert(isNaN(maxOfArray([1,2,'bucklemyshoe'])))
+console.assert(isNaN(maxOfArray([1,2,'bucklemyshoe'])))
 
 /**
 
@@ -70,6 +74,14 @@ Define a function reverse() that computes
 the reversal of a string. For example,
 reverse("skoob") should return the
 string "books". */
+
+var reverse = function(input) {
+    var newString = ''
+    for (var i = input.length - 1; i >= 0; i--){
+        newString += input[i]
+    }
+        return newString
+}
 
 console.assert(reverse("books") === "skoob")
 console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew")

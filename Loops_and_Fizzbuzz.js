@@ -95,6 +95,23 @@ write a function the returns a FizzBuzz string for some number N (counting up fr
 - for every number that is a multiple of 5 (but not 3), return "buzz"
 - for every number that is a multiple of 3 and 5, return "fizzbuzz" */
 
+var fizzbuzz = function(N) {
+    var words = ''
+    var wordOnThisIteration = ''
+    for(var i = 1; i <= N; i += 1){
+        if(i % 3 !== 0 && i % 5 !== 0) {
+            wordOnThisIteration = '.'
+        }else if (i % 3 === 0 && i % 5 !== 0) {
+            wordOnThisIteration = 'fizz'
+        }else if (i % 3 !== 0 && i % 5 === 0) {
+            wordOnThisIteration = 'buzz'
+        }else {
+            wordOnThisIteration = 'fizzbuzz'
+        }
+        words = words + wordOnThisIteration
+    } return words
+}
+
 console.assert(fizzbuzz(1) === ".")
 console.assert(fizzbuzz(2) === "..")
 console.assert(fizzbuzz(3) === "..fizz")
@@ -108,6 +125,19 @@ Write a function findLongestWord() that takes a string of words and returns the 
 i.e. findLongestWord("a book full of dogs") should return "book" */
 
 // function findLongestWord(sentence){ // YOUR CODE HERE }
+
+var findLongestWord = function (string) {
+    var str = string.split(" ");
+    var longest = 0;
+    var word = ' ';
+    for (var i = 0; i < str.length - 1; i++) {
+        if (longest < str[i].length) {
+            longest = str[i].length;
+            word = str[i];
+        }
+    }
+    return word;
+}
 
 console.assert(findLongestWord("a book full of dogs") === "book")
 console.assert(findLongestWord("don't mess with Texas") === "Texas")

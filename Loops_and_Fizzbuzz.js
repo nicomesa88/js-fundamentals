@@ -127,13 +127,13 @@ i.e. findLongestWord("a book full of dogs") should return "book" */
 // function findLongestWord(sentence){ // YOUR CODE HERE }
 
 var findLongestWord = function (string) {
-    var str = string.split(" ");
-    var longest = 0;
-    var word = ' ';
+    var str = string.split(" ")
+    var longest = 0
+    var word = ' '
     for (var i = 0; i < str.length - 1; i++) {
         if (longest < str[i].length) {
-            longest = str[i].length;
-            word = str[i];
+            longest = str[i].length
+            word = str[i]
         }
     }
     return word;
@@ -147,6 +147,15 @@ console.assert(findLongestWord("don't mess with Texas") === "Texas")
 // PART 6 *
 // write a function that returns the Greatest Common Denominator of two numbers
 // - if no GCD exists, return 1
+
+ var GCD = function(a, b) {
+    while (b != 0) {
+        var denominator = a % b
+        a = b
+        b = denominator
+    }
+    return a
+}
 
 console.assert(GCD(5,1) === 1);
 console.assert(GCD(15,3) === 3);

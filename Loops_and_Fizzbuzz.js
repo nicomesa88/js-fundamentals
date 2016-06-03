@@ -130,7 +130,7 @@ var findLongestWord = function (string) {
     var str = string.split(" ")
     var longest = 0
     var word = ' '
-    for (var i = 0; i < str.length - 1; i++) {
+    for (var i = 0; i < str.length; i++) {
         if (longest < str[i].length) {
             longest = str[i].length
             word = str[i]

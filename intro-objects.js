@@ -1,12 +1,12 @@
 // NORMAL MODE ( 0 - 4 )
 
 
-// Part 0 
+// Part 0
 
-// Write a function called flipColor. This function may be 
-// used to change the color of a tile in a game. It should 
+// Write a function called flipColor. This function may be
+// used to change the color of a tile in a game. It should
 // take as input an object. If that object's color property
-// has the value blue, it should change it to red, and 
+// has the value blue, it should change it to red, and
 // vice-versa.
 
 
@@ -17,6 +17,16 @@ var tile = {
     color: "blue"
 }
 
+var flipColor = function(inputObj) {
+    if (inputObj['color'] === 'blue'){
+        inputObj['color'] = 'red'
+    }
+    else {
+        inputObj['color'] = 'blue'
+    }
+    return inputObj
+}
+
 var tile2 = flipColor(tile)
 console.assert(tile2.color === "red")
 console.assert(flipColor(tile2).color === "blue")
@@ -24,8 +34,8 @@ console.assert(flipColor(tile2).color === "blue")
 
 // Part 1
 
-// Write a function called getFullNames that takes an array 
-// of objects with first and last names and returns an array 
+// Write a function called getFullNames that takes an array
+// of objects with first and last names and returns an array
 // of strings, where each string is a customer's full name.
 
 var customers = [
@@ -35,6 +45,16 @@ var customers = [
     { first: 'Jack', last: 'White'}
 ]
 
+var getFullNames = function (obj) {
+    var fullNameArray = []
+    for (var i = 0; i < obj.length; i++) {
+        var namePart = obj[i]
+        var fullNamesStrings = namePart['first'] + ' ' + namePart['last']
+        fullNameArray.push(fullNamesStrings)
+
+    }return fullNameArray
+}
+
 console.assert(getFullNames(customers)[1] === "John Smith")
 
 
@@ -43,8 +63,8 @@ console.assert(getFullNames(customers)[1] === "John Smith")
 // Part 2
 
 // Write a function called generateDog that returns an object which represents a dog.
-// The dog object should have attributes like legs, weight and color. The dog *constructor* 
-// (which is, almost, what this is) should take a name input, and the dog should receive the 
+// The dog object should have attributes like legs, weight and color. The dog *constructor*
+// (which is, almost, what this is) should take a name input, and the dog should receive the
 // assigned name.
 
 var dog = generateDog('rex')
@@ -56,8 +76,8 @@ var dog = generateDog('carl')
 console.assert(dog.name === 'carl')
 
 
-// Give the dog a method called .speak(). speak() should receive a string as input and 
-// return a new version of that string where the first letter of every word is replaced 
+// Give the dog a method called .speak(). speak() should receive a string as input and
+// return a new version of that string where the first letter of every word is replaced
 // with the letter 'r'.
 
 
@@ -102,13 +122,13 @@ console.assert(wordFrequencyObject.black === 5)
 
 // ADVENTURE MODE ( 5 - 8 )
 
-// for these problems you will need to use the for-in loop, and the special 
+// for these problems you will need to use the for-in loop, and the special
 // `this` keyword.
 
 
 // Part 5
 
-// Write a function called reverseObject(). It should take as input an object, 
+// Write a function called reverseObject(). It should take as input an object,
 // and it should output a new object where the keys and values are reversed.
 
 
@@ -124,7 +144,7 @@ console.assert(reversed['2b'] === 'apartment_no')
 
 // Part 6
 
-// Write a function called reverseAll(). It should take as input an array of 
+// Write a function called reverseAll(). It should take as input an array of
 // objects, and it should output an array of objects with the keys and values
 // reversed.
 
@@ -140,7 +160,7 @@ console.assert(flippedUsers[1].dealmaking === 'hobby')
 
 // Part 7
 
-// Write a function where() that takes two inputs, a list of objects and 
+// Write a function where() that takes two inputs, a list of objects and
 // a properties object. It should return a new list containing only those
 // objects that meet the key-value conditions in the properties object.
 
@@ -170,11 +190,11 @@ console.assert(midcentury.length === 2)
 
 // Part 8
 
-// Create an object that has a name attribute and a method called personalize. 
-// personalize should take a function as input. when personalize is called, 
+// Create an object that has a name attribute and a method called personalize.
+// personalize should take a function as input. when personalize is called,
 // an introductory string should be inserted before the input function's
 // return value. Use the example in the console.assert to understand
-// exactly how you should write the method. Including the period! 
+// exactly how you should write the method. Including the period!
 
 var politeObject = {
     name: "Frank"

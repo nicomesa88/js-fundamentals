@@ -1,18 +1,42 @@
-// PART 0: Write a function called squareDance() that squares each number in an array.
+// // PART 0: Write a function called squareDance() that squares each number in an array.
+
+var squareDance = function (ary, pos)  {
+    var answer = 0
+    for (var i = 0; i < ary.length ; i++) {
+            answer = answer*answer
+            if (ary[pos] === ary[pos] ) {
+            answer = ary[i]*ary[i]
+        }
+    }
+    return answer
+}
 
 console.assert(squareDance([1, 2])[1] === 4)
 console.assert(squareDance([5,10,15])[2] === 225)
 console.assert(squareDance([3,6,9,3])[0] === 9)
 
-// PART 1: write a function called nicer(). It should clean up the language in its input sentence.
+// // PART 1: write a function called nicer(). It should clean up the language in its input sentence.
 
-console.assert(nicer("mom get the heck in here and bring me a darn sandwich.") === "mom get the in here and bring me a sandwich.")
+// console.assert(nicer("mom get the heck in here and bring me a darn sandwich.") === "mom get the in here and bring me a sandwich.")
 
-console.assert(nicer("here son, your crappy sandwich is on the dang plate.") === "here son, your sandwich is on the plate.")
+// console.assert(nicer("here son, your crappy sandwich is on the dang plate.") === "here son, your sandwich is on the plate.")
 
-// PART 2: write a function called capitalizeAll(). It should take as input a sentence and capitalize the first letter of every word in the sentence. 
+// PART 2: write a function called capitalizeAll(). It should take as input a sentence and capitalize the first letter of every word in the sentence.
 
-console.assert(capitalizeAll('every day is like sunday.') === 'Every Day Is Like Sunday.'))
+var capitalizeAll = function (str) {
+    var newStr = ' '
+    for ( var i = 0; i < str.length; i++) {
+        var newAry = []
+        newAry = str.split(' ')
+        log(newAry)
+             if ( newAry[i] === 0) {
+                 newAry = newAry.toUpperCase()
+             }
+    } return newStr
+}
+
+
+console.assert(capitalizeAll(('every day is like sunday.') === 'Every Day Is Like Sunday.'))
 
 // PART 3: write a function called properSentences(). It should take as input a string and capitalize the first letter of every sentence in that string. (For our purposes, all sentences will end with periods. Write one that works with ? and ! and receive a gratifying high five, right on the hand!)
 
@@ -20,7 +44,7 @@ var paragraph = 'it was a fine morning. the wine was good. light slanted in thro
 
 console.assert(properSentences(paragraph) === "It was a fine morning. The wine was good. Light slanted in through the cafe window.")
 
-// PART 4: write a function called iPutTheFunIn(). It should take a string as input. The output should be a copy of the original string with the word 'fun' inserted into the center of the string. 
+// PART 4: write a function called iPutTheFunIn(). It should take a string as input. The output should be a copy of the original string with the word 'fun' inserted into the center of the string.
 
 console.assert(iPutTheFunIn("funerary") === "funefunrary")
 console.assert(iPutTheFunIn("reds") === "refunds")
@@ -56,3 +80,4 @@ var exclaimAll = function(arr) {
 var result = pipeline([10,20,30],squareDance,exclaimAll)
 console.assert(result[1] === "400!")
 console.assert(result[2] === "900!")
+

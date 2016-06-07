@@ -67,6 +67,13 @@ console.assert(getFullNames(customers)[1] === "John Smith")
 // (which is, almost, what this is) should take a name input, and the dog should receive the
 // assigned name.
 
+var generateDog = function (nameString) {
+    var dogObj = {}
+    dogObj.legs = 4
+    dogObj.name = nameString
+    return dogObj
+}
+
 var dog = generateDog('rex')
 
 console.assert(dog.legs === 4)
@@ -80,6 +87,14 @@ console.assert(dog.name === 'carl')
 // return a new version of that string where the first letter of every word is replaced
 // with the letter 'r'.
 
+dog.speak = function (inputString) {
+    var speakString = ''
+    var newAry = inputString.split(' ')
+    for (var i = 0; i < newAry.length; i++) {
+        var speakString = speakString + newAry[i].replace(newAry[i].charAt(0), 'r') + ' '
+    }
+    return speakString
+}
 
 console.assert(dog.speak('i love you') === 'r rove rou')
 console.assert(dog.speak('so hungry') === 'ro rungry')
@@ -96,6 +111,20 @@ console.assert(dog.speak('so hungry') === 'ro rungry')
 // pluck(stooges, 'name') should yield the array, ['moe','larry','curly']
 
 var stooges = [{name: 'moe', age: 40}, {name: 'larry', age: 50}, {name: 'curly', age: 60}]
+
+var pluck = function(inputArray,propName) {
+    var valuesArray = []
+    for (var i = 0; i < inputArray.length; i++) {
+        var object = inputArray[i]
+        // log('propName input >>' + propName)
+        var targetValue = object[propName]
+        // log(targetValue)
+        valuesArray.push(targetValue)
+        // log(valuesArray)
+    }
+    // log(valuesArray)
+    return valuesArray
+}
 
 console.assert(pluck(stooges, 'name')[0] === 'moe')
 console.assert(pluck(stooges, 'age')[2] === 60)

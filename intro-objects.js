@@ -143,6 +143,21 @@ Comic book creators, like all story-tellers, get great mileage out of myth and h
 
 var wordFrequencyObject = getCounts(text)
 
+var getCounts = function(text) {
+    var newAry = text.toLowerCase().split(' ')
+    // log(newAry)
+    var dictionary = {}
+    for (var i = 0; i < newAry.length; i++) {
+        var word = newAry[i]
+    //increase the count stored in the dictionary for that word
+        if (dictionary[word] === undefined) {
+            dictionary[word] = 1
+        } else {
+            dictionary[word]++
+            }
+    } return dictionary
+}
+
 console.assert(wordFrequencyObject.but === 3)
 console.assert(wordFrequencyObject.black === 5)
 
